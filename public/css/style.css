@@ -1,0 +1,133 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+.navbar{
+    height: 5rem;
+    border-bottom: 2px solid gray;
+    border-radius: 1.5rem;
+    background-color: white;
+    font-size: 1.2rem;
+}
+
+.fa-regular{
+    color: rgb(209, 30, 30);
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #222222 !important;
+    font-weight: bold;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info{
+    height: 2.2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    background-color: #dfdfdf;
+    padding : 0.4rem 0;
+}
+
+.f-info-socials i {
+    margin-left: 1rem;
+    font-size: 1.4rem;
+}
+
+.listing-card{
+    border: none !important;
+    margin: 0 0 2rem 1rem ;
+}
+.card a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+.edit-btn, .add-btn{
+    background-color: rgb(209, 30, 30) !important;
+    border: none !important;
+}
+
+.edit-btn:hover, .add-btn:hover{
+    background-color: rgb(241, 18, 18) !important;
+    font-size: 1.1rem;
+    border: none !important;
+}
+
+.new-list input,textarea{
+    width: 30rem;
+}
+
+input , textarea{
+    border-top: none;
+    /* border-bottom: 5px solid gray !important; */
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+input[type="search"]{
+    border-top: none !important;
+}
+
+.form-range, .form-range:hover{
+    border: none !important;
+    padding: 0 !important;
+    border-radius: none !important;
+}
+
+input:hover , textarea:hover{
+    border-top: none;
+    border-bottom: 3px solid rgb(59, 59, 59) !important;
+    /* padding: 0.5rem; */
+    /* border-radius: 0.8rem; */
+}
+
+.show-img{
+    height: 40vh;
+}
+.card-body-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.auth{
+    display: flex;
+    justify-content: center;
+}

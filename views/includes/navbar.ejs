@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-sm bg-body-light justify-content-between sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listing"
+      ><i class="fa-regular fa-compass"></i
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listing">Explore</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form action="/listing/search" method="post" class="form-inline" style="display: flex; justify-content: center; gap: 1rem; align-items: center;">
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="type your destination" aria-label="Search" style="border-radius: 1.2rem !important; ">
+
+          <button class="btn btn-outline-secondary my-2 my-sm-0 btn-search" type="submit" style="display: flex; gap: 1rem; border: none; background-color: rgb(255, 67, 67); color: white; border-radius:1.2rem ;"><i class="fa-solid fa-magnifying-glass" style="margin-top: 0.1rem;"></i>Search </button>
+        </form>
+      </div>
+      <div class="nav navbar-nav ms-auto auth">
+        <a class="nav-link" href="/listing/new">Airbnb your home</a>
+        <% if(!currUser){ %>
+        <div class="ml-3">
+          <form class="form-inline my-2 my-lg-0" action="/login">
+            <button class="btn btn-outline-secondary my-2 my-sm-0">
+              <b>Log-in</b>
+            </button>
+          </form>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div>
+          <form class="form-inline my-2 my-lg-0" action="/signup">
+            <button class="btn btn-outline-secondary my-2 my-sm-0">
+              <b>Sign-Up</b>
+            </button>
+          </form>
+        </div>
+        <% } %> <% if(currUser){ %>
+        <div class="ml-3">
+          <form class="form-inline my-2 my-lg-0" action="/logout">
+            <button class="btn btn-outline-secondary my-2 my-sm-0">
+              <b>Log-out</b>
+            </button>
+          </form>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
