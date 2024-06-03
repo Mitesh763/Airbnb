@@ -1,50 +1,51 @@
 <% layout("/layouts/boilerplet") %>
 
-  <style>
-    #filters {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-    }
+<style>
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    .filter {
-      text-align: center;
-      opacity: 0.7;
-      align-items: center;
-      width: 5.5rem;
-    }
+  .filter {
+    text-align: center;
+    opacity: 0.7;
+    align-items: center;
+    width: 5.5rem;
+  }
 
-    .card-text-below {
-      display: flex;
-    }
+  .card-text-below {
+    display: flex;
+  }
 
-    .filter:hover {
-      opacity: 1;
-      cursor: pointer;
-    }
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
 
-    .filter p {
-      font-size: 0.8rem;
-    }
+  .filter p {
+    font-size: 0.8rem;
+  }
 
-    .text-toggle {
-      border: 0.12rem solid gray;
-      border-radius: 1rem;
-      padding: 0.7rem;
-      display: flex;
-      align-items: center;
-      /* width: 12rem; */
-      /* height: rem; */
-      /* margin-top: 0.6rem; */
-    }
+  .text-toggle {
+    border: 0.12rem solid gray;
+    border-radius: 1rem;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    /* width: 12rem; */
+    /* height: rem; */
+    /* margin-top: 0.6rem; */
+  }
 
-    .textInfo {
-      display: none;
-    }
-  </style>
+  .textInfo {
+    display: none;
+  }
+</style>
 
-  <body>
+<body>
+  <div class="container">
     <div class="row">
       <!-- <h3 class="mt-4">All Listings</h3> -->
       <div id="filters">
@@ -82,31 +83,40 @@
         </div>
         <div class="text-toggle">
           <div class="form-check-reverse form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Display with Texes</label>
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label class="form-check-label" for="flexSwitchCheckDefault"
+              >Display with Texes</label
+            >
           </div>
         </div>
       </div>
       <% for( let listing of allListing) { %>
-        <div class="card listing-card" style="width: 22rem">
-          <a href="/listing/<%= listing._id %>">
-            <img class="card-img-top" src="<%= listing.image.url %>" alt="Card image cap" style="height: 20rem" />
-            <div class="card-img-overlay"></div>
-            <div class="card-body">
-              <p class="card-text">
-                <b>
-                  <%= listing.title %> <br />
-                </b>
-                ₹ <%= listing.price.toLocaleString("en-IN") %> /night
-                  <span class="textInfo"> + 18% GST </span>
-              </p>
-            </div>
-          </a>
-        </div>
-        <% } %>
+      <div class="card listing-card" style="width: 22rem">
+        <a href="/listing/<%= listing._id %>">
+          <img
+            class="card-img-top"
+            src="<%= listing.image.url %>"
+            alt="Card image cap"
+            style="height: 20rem"
+          />
+          <div class="card-img-overlay"></div>
+          <div class="card-body">
+            <p class="card-text">
+              <b> <%= listing.title %> <br /> </b>
+              ₹ <%= listing.price.toLocaleString("en-IN") %> /night
+              <span class="textInfo"> + 18% GST </span>
+            </p>
+          </div>
+        </a>
+      </div>
+      <% } %>
     </div>
-  </body>
-
+  </div>
 
   <script>
     // form-check-input
@@ -120,5 +130,6 @@
           info.style.display = "none";
         }
       }
-    })
+    });
   </script>
+</body>

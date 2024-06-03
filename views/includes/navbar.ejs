@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-body-light justify-content-between sticky-top">
+  <nav class="navbar navbar-expand-lg bg-body-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listing"
       ><i class="fa-regular fa-compass"></i
@@ -19,37 +19,56 @@
         <a class="nav-link" href="/listing">Explore</a>
       </div>
       <div class="navbar-nav ms-auto">
-        <form action="/listing/search" method="post" class="form-inline" style="display: flex; justify-content: center; gap: 1rem; align-items: center;">
-          <input class="form-control mr-sm-2" name="search" type="search" placeholder="type your destination" aria-label="Search" style="border-radius: 1.2rem !important; ">
+        <form
+          action="/listing/search"
+          method="post"
+          class="form-inline"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+          "
+        >
+          <input
+            class="form-control mr-sm-2"
+            name="search"
+            type="search"
+            placeholder="type your destination"
+            aria-label="Search"
+            style="border-radius: 1.2rem !important"
+          />
 
-          <button class="btn btn-outline-secondary my-2 my-sm-0 btn-search" type="submit" style="display: flex; gap: 1rem; border: none; background-color: rgb(255, 67, 67); color: white; border-radius:1.2rem ;"><i class="fa-solid fa-magnifying-glass" style="margin-top: 0.1rem;"></i>Search </button>
+          <button
+            class="btn btn-outline-secondary my-2 my-sm-0 btn-search"
+            type="submit"
+            style="
+              display: flex;
+              gap: 1rem;
+              border: none;
+              background-color: rgb(255, 67, 67);
+              color: white;
+              border-radius: 1.2rem;
+            "
+          >
+            <i
+              class="fa-solid fa-magnifying-glass"
+              style="margin-top: 0.1rem"
+            ></i
+            >Search
+          </button>
         </form>
       </div>
       <div class="nav navbar-nav ms-auto auth">
-        <a class="nav-link" href="/listing/new">Airbnb your home</a>
+        <a class="nav-link my-1" href="/listing/new">Airbnb your home</a>
         <% if(!currUser){ %>
-        <div class="ml-3">
-          <form class="form-inline my-2 my-lg-0" action="/login">
-            <button class="btn btn-outline-secondary my-2 my-sm-0">
-              <b>Log-in</b>
-            </button>
-          </form>
-        </div>
-        &nbsp;&nbsp;&nbsp;
-        <div>
-          <form class="form-inline my-2 my-lg-0" action="/signup">
-            <button class="btn btn-outline-secondary my-2 my-sm-0">
-              <b>Sign-Up</b>
-            </button>
-          </form>
+        <div class="my-1">
+          <a class="btn btn-outline-secondary my-2" href="/login">Log-in</a>
+          <a class="btn btn-outline-secondary my-2" href="/signup">Sign-up</a>
         </div>
         <% } %> <% if(currUser){ %>
-        <div class="ml-3">
-          <form class="form-inline my-2 my-lg-0" action="/logout">
-            <button class="btn btn-outline-secondary my-2 my-sm-0">
-              <b>Log-out</b>
-            </button>
-          </form>
+        <div>
+          <a class="btn btn-outline-secondary my-2" href="/logout">Log-out</a>
         </div>
         <% } %>
       </div>
