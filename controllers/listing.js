@@ -9,7 +9,7 @@ module.exports.Render = (req, res) => {
   res.render("./listings/new.ejs");
 };
 
-module.exports.searchListing =async (req, res) => {
+module.exports.searchListing = async (req, res) => {
   let search = req.body.search;
   // console.log(search);
   if (search === "") {
@@ -21,9 +21,9 @@ module.exports.searchListing =async (req, res) => {
     if (allListing && allListing.length) {
       req.flash("success", "Your searched Listing");
       // console.log(allListing);
-      res.render("./listings/index.ejs",{allListing});
-    }else{
-      req.flash("error","Search Listing doesn't exist");
+      res.render("./listings/index.ejs", { allListing });
+    } else {
+      req.flash("error", "Search Listing doesn't exist");
       res.redirect("/listing");
     }
   }
@@ -69,7 +69,10 @@ module.exports.editListing = async (req, res) => {
   }
 
   let originalImage = listing.image.url;
+  console.log(originalImage);
+
   originalImage = originalImage.replace("upload", "/upload/w_250");
+  console.log(originalImage);
   res.render("./listings/edit.ejs", { listing, originalImage });
 };
 

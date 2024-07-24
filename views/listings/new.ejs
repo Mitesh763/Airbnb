@@ -3,7 +3,13 @@
   <div class="row new-list">
     <div class="col-12 mt-3 offset-2">
       <h4>Create New Listing</h4>
-      <form action="/listing" enctype="multipart/form-data" method="post" class="needs-validation" novalidate>
+      <form
+        action="/listing"
+        enctype="multipart/form-data"
+        method="post"
+        class="needs-validation"
+        novalidate
+      >
         <div class="mb-3">
           <label for="title" class="form-label">Title: </label><br />
           <input
@@ -26,11 +32,7 @@
         </div>
         <div class="mb-3">
           <label for="image" class="form-label">Image : </label><br />
-          <input
-            type="file"
-            name="listing[image]"
-            required
-          />
+          <input type="file" name="listing[image]" required />
           <div class="valid-feedback">Image must be invalid</div>
         </div>
         <div class="mb-3">

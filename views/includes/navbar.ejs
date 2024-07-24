@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg bg-body-light sticky-top">
+<nav class="navbar navbar-expand-lg bg-body-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listing"
       ><i class="fa-regular fa-compass"></i
@@ -68,7 +68,10 @@
         </div>
         <% } %> <% if(currUser){ %>
         <div>
-          <a class="btn btn-outline-secondary my-2" href="/logout">Log-out</a>
+          <a class="btn btn-outline-secondary my-2 welcome-user" href="/logout"
+            >Log-out</a
+          >
+          <h6 class="welcome-user">Welcome <%= currUser.username %></h6>
         </div>
         <% } %>
       </div>
