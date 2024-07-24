@@ -22,8 +22,8 @@ const reviewRoute = require("./routes/review.js");
 const userRoute = require("./routes/user.js");
 // const user = require("./models/user.js");
 
-const db_URL = "mongodb://127.0.0.1:27017/wanderlust";
-// const db_URL = process.env.ATLAS_URL;
+// const db_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const db_URL = process.env.ATLAS_URL;
 main()
   .then(() => {
     console.log("Connected to DB");
