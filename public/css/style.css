@@ -60,13 +60,13 @@ body {
   background-color: white;
   font-size: 1.2rem;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  backdrop-filter: blur(5px) saturate(160%) contrast(45%) brightness(135%);
   -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
     brightness(140%);
 }
 
 .fa-regular {
-  color: rgb(209, 30, 30);
+  color: rgb(83 0 255);
   margin-left: 1rem;
   font-size: 2rem;
 }
@@ -74,6 +74,10 @@ body {
 .nav-link {
   color: #222222 !important;
   font-weight: bold;
+}
+
+.commonBtn-hover:hover {
+  background-color: rgb(54, 0, 163) !important;
 }
 
 footer {
@@ -109,12 +113,25 @@ footer {
 .listing-card {
   display: flex;
   flex-wrap: wrap;
+  width: 65vw;
+  min-width: 60vw;
   border: none !important;
   margin: 0 0 2rem 1rem;
 }
 .card a {
   text-decoration: none;
   color: #222222;
+}
+
+.show-list-title {
+  margin-left: 5.2rem !important;
+  text-align: left;
+  word-wrap: nowrap;
+}
+
+.review-part {
+  width: 65vw;
+  min-width: 68vw;
 }
 
 .card-img-top {
@@ -125,6 +142,12 @@ footer {
   -webkit-box-shadow: 11px 17px 18px -6px rgba(82, 62, 82, 1);
   -moz-box-shadow: 11px 17px 18px -6px rgba(82, 62, 82, 1);
   box-shadow: 11px 17px 18px -6px rgba(82, 62, 82, 1);
+  /* transform: scale(0.8); */
+}
+
+.imgs-list {
+  /* border: 2px solid black; */
+  /* overflow: hidden; */
 }
 
 .card-body {
@@ -142,15 +165,20 @@ footer {
   /* transition-duration: 1s; */
 }
 
+/* .listing-card:hover img {
+  transform: scale(1.1);
+  transition: 1s;
+} */
+
 .edit-btn,
 .add-btn {
-  background-color: rgb(209, 30, 30) !important;
+  background-color: rgb(83 0 255) !important;
   border: none !important;
 }
 
 .edit-btn:hover,
 .add-btn:hover {
-  background-color: rgb(241, 18, 18) !important;
+  background-color: rgb(83 0 255) !important;
   font-size: 1.1rem;
   border: none !important;
   transition-duration: 0.1s;
@@ -197,6 +225,12 @@ textarea:hover {
 .auth {
   display: flex;
   justify-content: center;
+}
+
+.text-toggle {
+  padding: 0 !important;
+  width: 75vh;
+  word-wrap: nowrap;
 }
 
 .scollable-tabs-container {
@@ -265,4 +299,13 @@ textarea:hover {
   justify-content: center;
   text-align: center;
   margin-left: 2rem;
+}
+
+.review-card {
+  border: 2px solid rgb(211, 211, 211) !important;
+  width: 200px !important;
+  /* min-width: 40vw !important; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }

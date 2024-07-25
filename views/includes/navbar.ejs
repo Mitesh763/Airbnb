@@ -46,7 +46,7 @@
               display: flex;
               gap: 1rem;
               border: none;
-              background-color: rgb(255, 67, 67);
+              background-color: rgb(83 0 255);
               color: white;
               border-radius: 1.2rem;
             "
@@ -63,12 +63,22 @@
         <a class="nav-link my-1" href="/listing/new">Airbnb your home</a>
         <% if(!currUser){ %>
         <div class="my-1">
-          <a class="btn btn-outline-secondary my-2" href="/login">Log-in</a>
-          <a class="btn btn-outline-secondary my-2" href="/signup">Sign-up</a>
+          <a
+            class="btn btn-outline-secondary my-2 commonBtn-hover"
+            href="/login"
+            >Log-in</a
+          >
+          <a
+            class="btn btn-outline-secondary my-2 commonBtn-hover"
+            href="/signup"
+            >Sign-up</a
+          >
         </div>
         <% } %> <% if(currUser){ %>
         <div>
-          <a class="btn btn-outline-secondary my-2 welcome-user" href="/logout"
+          <a
+            class="btn btn-outline-secondary my-2 welcome-user commonBtn-hover"
+            href="/logout"
             >Log-out</a
           >
           <h6 class="welcome-user">Welcome <%= currUser.username %></h6>

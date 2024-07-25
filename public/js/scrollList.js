@@ -4,7 +4,7 @@ const menuList = document.querySelector(".menu-items-lists");
 
 rightBtn.addEventListener("click", () => {
   menuList.scrollLeft += 200;
-  if (menuList.scrollLeft >= 25) {
+  if (menuList.scrollLeft >= 15) {
     leftBtn.classList.remove("active");
   }
   if (menuList.scrollLeft >= 545) {
