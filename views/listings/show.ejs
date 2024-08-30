@@ -19,6 +19,9 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
+            <%= listing.listingType.map((listType)=>( listType )) %>
+          </li>
+          <li class="list-group-item">
             ₹ <%= listing.price.toLocaleString("en-IN") %> /night
           </li>
           <li class="list-group-item"><%= listing.location %></li>

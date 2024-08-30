@@ -12,7 +12,6 @@ const listingSchema = new Schema({
     url: String,
     filename: String,
   },
-  
   price: Number,
   location: String,
   country: String,
@@ -26,6 +25,7 @@ const listingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  listingType: [], //new update show type of listing [ river, mountain.... ]
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {

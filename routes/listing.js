@@ -26,10 +26,7 @@ router
 router.get("/new", isLoggedIn, listingController.Render);
 
 // search route
-router.post(
-  "/search",
-  wrapAsync(listingController.searchListing)
-);
+router.post("/search", wrapAsync(listingController.searchListing));
 
 router
   .route("/:id")

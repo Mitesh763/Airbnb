@@ -5,6 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* .loader-container {
@@ -145,11 +146,6 @@ footer {
   /* transform: scale(0.8); */
 }
 
-.imgs-list {
-  /* border: 2px solid black; */
-  /* overflow: hidden; */
-}
-
 .card-body {
   margin: 0 !important;
   padding: 0 !important;
@@ -184,8 +180,7 @@ footer {
   transition-duration: 0.1s;
 }
 
-.new-list input,
-textarea {
+.new-list .from-field {
   width: 30rem;
 }
 
@@ -308,4 +303,21 @@ textarea:hover {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.listing-types {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.list-type-container {
+  width: 150px;
+}
+
+.listing-types input {
+  margin: 5px;
+  font-weight: 800 !important;
+  font-size: 35px !important;
 }

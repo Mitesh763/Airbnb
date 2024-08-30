@@ -22,7 +22,6 @@ const reviewRoute = require("./routes/review.js");
 const userRoute = require("./routes/user.js");
 // const user = require("./models/user.js");
 
-// const db_URL = "mongodb://127.0.0.1:27017/wanderlust";
 const db_URL = process.env.ATLAS_URL;
 main()
   .then(() => {
@@ -44,7 +43,7 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.redirect("/listing");
+  res.redirect("/listing?cat=All");
 });
 
 const store = mongoStore.create({
@@ -103,6 +102,6 @@ app.use((err, req, res, next) => {
   // res.status(statusCode).send(message);
 });
 
-app.listen(8081, () => {
-  console.log("Server Started at  http://localhost:8081");
+app.listen(8080, () => {
+  console.log("Server Started at  http://localhost:8080");
 });

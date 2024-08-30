@@ -1,7 +1,10 @@
 const Listing = require("../models/listing.js");
 
 module.exports.Index = async (req, res) => {
-  let allListing = await Listing.find({});
+  console.log(req.query.cat);
+  let cat = req.query.cat;
+  let allListing = await Listing.find({ listingType: cat });
+  console.log(allListing);
   res.render("./listings/index.ejs", { allListing });
 };
 
@@ -14,7 +17,7 @@ module.exports.searchListing = async (req, res) => {
   // console.log(search);
   if (search === "") {
     req.flash("error", "Input Your Destination");
-    res.redirect("/listing");
+    res.redirect("/listing?cat=All");
   } else {
     let allListing = await Listing.find({ location: search });
     console.log(allListing);
@@ -24,7 +27,7 @@ module.exports.searchListing = async (req, res) => {
       res.render("./listings/index.ejs", { allListing });
     } else {
       req.flash("error", "Search Listing doesn't exist");
-      res.redirect("/listing");
+      res.redirect("/listing?cat=All");
     }
   }
 };
@@ -36,7 +39,7 @@ module.exports.showListing = async (req, res) => {
     .populate("owner");
   if (!listing) {
     req.flash("error", "Requested Listing doesn't exist!");
-    res.redirect("/listing");
+    res.redirect("/listing?cat=All");
   }
   res.render("./listings/show.ejs", { listing });
 };
@@ -46,17 +49,15 @@ module.exports.createListing = async (req, res, next) => {
   // if(!req.body.listing){
   //     throw new ExpressionError(400,"Send valid data for listing");
   // }  // only check data are available or not.
-  // console.log("hi")
   let url = req.file.path;
   let filename = req.file.filename;
-  // console.log(url,"  .....  ", filename);
   const newListing = new Listing(req.body.listing);
   newListing.owner = req.user._id;
   newListing.image = { url, filename };
   let added = await newListing.save();
   console.log(added);
   req.flash("success", "New listing Added successfully");
-  res.redirect("/listing");
+  res.redirect("/listing?cat=All");
   // nextTick(err);
 };
 
@@ -65,7 +66,7 @@ module.exports.editListing = async (req, res) => {
   let listing = await Listing.findById(id);
   if (!listing) {
     req.flash("error", "Requested listing doesn't exist");
-    res.redirect("/listing");
+    res.redirect("/listing?cat=All");
   }
 
   let originalImage = listing.image.url;
@@ -97,7 +98,7 @@ module.exports.updateListing = async (req, res) => {
   // console.log(updatedListing);
   // if (!listing) {
   //   req.flash("error", "Requested Listing doesn't exist!");
-  //   res.redirect("/listing");
+  //   res.redirect("/listing?cat=All");
   // } else {
   // }
   req.flash("success", "listing Updated successfully");
@@ -108,5 +109,5 @@ module.exports.destroyListing = async (req, res) => {
   let { id } = req.params;
   await Listing.findByIdAndDelete(id);
   req.flash("success", "listing Deleted successfully");
-  res.redirect("/listing");
+  res.redirect("/listing?cat=All");
 };

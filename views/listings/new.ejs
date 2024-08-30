@@ -4,7 +4,7 @@
     <div class="col-12 mt-3 offset-2">
       <h4>Create New Listing</h4>
       <form
-        action="/listing"
+        action="/listing?cat=All"
         enctype="multipart/form-data"
         method="post"
         class="needs-validation"
@@ -13,6 +13,7 @@
         <div class="mb-3">
           <label for="title" class="form-label">Title: </label><br />
           <input
+            class="from-field"
             type="text"
             name="listing[title]"
             placeholder="Enter title"
@@ -24,6 +25,7 @@
           <label for="description" class="form-label">Description: </label
           ><br />
           <textarea
+            class="from-field"
             name="listing[description]"
             placeholder="Enter Description:"
             required
@@ -32,12 +34,106 @@
         </div>
         <div class="mb-3">
           <label for="image" class="form-label">Image : </label><br />
-          <input type="file" name="listing[image]" required />
+          <input
+            class="from-field"
+            type="file"
+            name="listing[image]"
+            required
+          />
           <div class="valid-feedback">Image must be invalid</div>
+        </div>
+        <div class="mb-3">
+          <label for="listingType" class="form-label">Types:</label>
+          <fieldset name="list-type" class="listing-types">
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="All"
+            />All
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Trending"
+            />Trending
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Rooms"
+            />Rooms
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="BeatchFront"
+            />BeatchFront
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Amazing Views"
+            />Amazing Views
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Domes"
+            />Domes
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Camping"
+            />Camping
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Arctic"
+            />Arctic
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Play"
+            />Play
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Treehouses"
+            />Treehouses
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="caves"
+            />caves
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Desert"
+            />Desert
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Ski-in/out"
+            />Ski-in/out
+            </div>
+            <div class="list-type-container"><input
+              type="checkbox"
+              name="listing[listingType]"
+              value="Top of the world"
+            />Top of the world
+          </fieldset>
         </div>
         <div class="mb-3">
           <label for="price" class="form-label">Price: </label><br />
           <input
+            class="from-field"
             type="number"
             name="listing[price]"
             placeholder="Enter Price: "
@@ -48,6 +144,7 @@
         <div class="mb-3">
           <label for="location" class="form-label">Location: </label><br />
           <input
+            class="from-field"
             type="text"
             name="listing[location]"
             placeholder="Enter Location: "
@@ -58,6 +155,7 @@
         <div class="mb-3">
           <label for="country" class="form-label">Country: </label><br />
           <input
+            class="from-field"
             type="text"
             name="listing[country]"
             placeholder="Enter Country:"
