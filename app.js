@@ -20,8 +20,10 @@ const User = require("./models/user.js");
 const listingRoute = require("./routes/listing.js");
 const reviewRoute = require("./routes/review.js");
 const userRoute = require("./routes/user.js");
+// const IP = "192.168.35.231";
 // const user = require("./models/user.js");
 
+// const db_URL = "mongodb://127.0.0.1:27017/wanderlust";
 const db_URL = process.env.ATLAS_URL;
 main()
   .then(() => {

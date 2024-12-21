@@ -67,7 +67,7 @@ body {
 }
 
 .fa-regular {
-  color: rgb(83 0 255);
+  color: rgb(149, 18, 189);
   margin-left: 1rem;
   font-size: 2rem;
 }
@@ -78,7 +78,7 @@ body {
 }
 
 .commonBtn-hover:hover {
-  background-color: rgb(54, 0, 163) !important;
+  background-color: rgb(149, 18, 189) !important;
 }
 
 footer {
@@ -168,13 +168,13 @@ footer {
 
 .edit-btn,
 .add-btn {
-  background-color: rgb(83 0 255) !important;
+  background-color: rgb(149, 18, 189) !important;
   border: none !important;
 }
 
 .edit-btn:hover,
 .add-btn:hover {
-  background-color: rgb(83 0 255) !important;
+  background-color: rgb(149, 18, 189) !important;
   font-size: 1.1rem;
   border: none !important;
   transition-duration: 0.1s;
@@ -223,8 +223,9 @@ textarea:hover {
 }
 
 .text-toggle {
-  padding: 0 !important;
-  width: 75vh;
+  padding: 0.5rem;
+  /* border: 2px solid black !important; */
+  width: 30vh;
   word-wrap: nowrap;
 }
 
@@ -273,12 +274,26 @@ textarea:hover {
   opacity: 1 !important;
 }
 
+.filters {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .menu-items-lists {
   display: flex;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;
+  width: 130vh;
+  /* border: 2px solid black; */
+}
+
+.show-categories {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 /* .menu-items-lists::-webkit-scrollbar {

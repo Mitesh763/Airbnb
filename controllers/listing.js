@@ -1,10 +1,8 @@
 const Listing = require("../models/listing.js");
 
 module.exports.Index = async (req, res) => {
-  console.log(req.query.cat);
   let cat = req.query.cat;
   let allListing = await Listing.find({ listingType: cat });
-  console.log(allListing);
   res.render("./listings/index.ejs", { allListing });
 };
 
